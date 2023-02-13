@@ -2,7 +2,7 @@ import random
 destinations_list = ['Colorado', 'Florida', 'Arizona', 'New York City', 'Seattle']
 restaurants_list =['Steak House', 'Sushi Den', 'Salad Central', 'What did I just eat?', 'Chicken Shack']
 mode_of_transport = ['Car', 'Bus', 'Plane', 'Train', 'Teleporter']
-entertainment_list = ['Musical', 'Haunted Town Tour', 'Fishing', 'Squirrel Wrangling', 'Scavenger Hunt Tour']
+entertainment_list = ['a Musical', 'Haunted Town Tour', 'Fishing Tour', 'Squirrel Wrangling', 'Scavenger Hunt Tour']
 
 # Random generate answer
 
@@ -23,20 +23,18 @@ print(day_trip)
 def determine_satisfaction(day_trip, mode, destination, restaurant, entertain, destinations_list, restaurants_list, mode_of_transport, entertainment_list):
     trip_satifaction = True
     while trip_satifaction == True:
-        user_input = input(f"Is your trip satifactory, Y or N?")
-        if user_input == "N":
+        user_input = input(f"Is your trip satifactory, Y or N? ")
+        if user_input == "N" or user_input == "n":
             mode, destination, restaurant, entertain = change_option(mode, destination, restaurant, entertain, destinations_list, restaurants_list, mode_of_transport, entertainment_list)
             day_trip = (f'Here is your trip. You have been selected take a {mode} to {destination}, eat at {restaurant}, and go {entertain}!')
             print(day_trip)
-        elif user_input == "Y":
+        elif user_input == "Y" or user_input == "y":
             print(f"Congrats! Let's get your trip booked.")
             trip_satifaction = False
 
 # Which option would they change?:
 def change_option(mode, destination, restaurant, entertain, destinations_list, restaurants_list, mode_of_transport, entertainment_list):
     user_input = input("Which option would you like to change? Destination, Restaurant, Transportation, Entertainment: ")
-    print(destination)
-    print(destinations_list)
     if user_input == "Destination" or user_input == "destination":
         destinations_list.remove(destination)
         destination = random_trip(destinations_list)
