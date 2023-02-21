@@ -49,7 +49,7 @@ def change_option(trip_elements):
         restaurants_list.remove(trip_elements[1])
         trip_elements[1] = random_trip(restaurants_list)
     elif user_input == "Transportation" or user_input == "transportation":
-        mode_of_transport.remove(trip_elements[1])
+        mode_of_transport.remove(trip_elements[2])
         trip_elements[2] = random_trip(mode_of_transport)
     elif user_input == "Entertainment" or user_input == "entertainment":
         entertainment_list.remove(entertainment_list[3])
